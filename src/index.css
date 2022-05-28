@@ -1,13 +1,165 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.App {
+  width: fit-content;
+  margin: 100px auto;
+}
+.form {
+  width: 500px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.form input,
+.form button {
+  display: block;
+}
+.form input {
+  width: 73%;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 0 10px;
+  z-index: 1;
+  outline: none;
+}
+.border-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.border-top {
+  position: absolute;
+  top: 0;
+  right: 135px;
+  width: 0;
+  height: 0;
+  border-top: 2px solid transparent;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.border-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 2px solid transparent;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.border-right {
+  position: absolute;
+  top: 0;
+  right: 135px;
+  width: 0;
+  height: 0;
+  border-right: 2px solid transparent;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.form input:focus ~ .border-bottom {
+  width: 73%;
+  height: 100%;
+  border-color: black;
+}
+.form input:focus ~ .border-top {
+  width: 73%;
+  height: 100%;
+  border-color: black;
+}
+.form input:focus ~ .border-left {
+  width: 73%;
+  height: 100%;
+  border-color: black;
+}
+.form input:focus ~ .border-right {
+  width: 73%;
+  height: 100%;
+  border-color: black;
+}
+.form button {
+  width: 25%;
+  font-size: 20px;
+  border: none;
+  background-color: #2222;
+  background-size: 0 0;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 5px;
+  outline: none;
+}
+.form button:focus {
+  box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.5);
+}
+.form button:hover {
+  background-color: #222;
+  color: white;
+}
+.form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2222;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 3px;
+}
+.liked {
+  background-color: bisque;
+}
+.todo p {
+  width: 100px;
+  padding: 0 10px;
+  margin: 0;
+  flex: 1;
+  word-break: break-all;
+}
+.todo_wrap {
+  margin-top: 20px;
+}
+.todo_wrap button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.todo_wrap button:active {
+  transform: scale(0.8);
+}
+.icon {
+  font-size: 25px;
+}
+.red_icon {
+  color: red;
+}
+::selection {
+  background-color: #222;
+  color: white;
+}
+.title {
+  font-size: 50px;
 }
